@@ -5,7 +5,6 @@ export const AppContext = React.createContext({});
 
 const AppProvider = ({children}) => {
   const initialState = useInitalState();
-
   return (
     <AppContext.Provider value={initialState}>
         {children}
@@ -13,5 +12,4 @@ const AppProvider = ({children}) => {
   );
 }
 
-
-export default AppProvider;  
+export default AppProvider; 

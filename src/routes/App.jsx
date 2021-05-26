@@ -11,8 +11,13 @@ import  AppProvider from '../context/AppContext';
 import useInitalState from '../hooks/useInitialState';
 
 const App = () => {
+  const initialState = useInitalState();
+  const isEmpty = Object.keys(initialState.state).length;
+
   return (
-    <AppProvider>
+    <>
+    {isEmpty > 0 ? (
+      <AppProvider>
       <BrowserRouter>
         <Layout>
           <Switch>
@@ -26,6 +31,10 @@ const App = () => {
         </Layout>
       </BrowserRouter>
     </AppProvider>
+    ) : 
+    <h1>Cargando...</h1>
+    }
+    </>
   );
 };
 
